@@ -1,5 +1,3 @@
-import { Routes , Route, Navigate } from 'react-router-dom';
-import logo from './logo.svg';
 import './App.css';
 import Home from './pages/home/Home.jsx';
 import Footer from './components/Footer.jsx';

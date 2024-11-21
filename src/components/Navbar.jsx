@@ -8,14 +8,16 @@ export default function Navbar() {
       <div className="container mx-auto flex items-center justify-between px-6 py-4">
         {/* Left Section: Logo and Name */}
         <div className="flex items-center">
-          <img
-            src={logo}
-            alt="Logo"
-            className="h-12 w-12 mr-3 rounded-full border-2 border-orange-500"
-          />
-          <h1 className="text-2xl font-bold text-gray-800 hidden sm:block">
-            Les Frères <span className="text-yellow-500">Rôtisseurs</span>
-          </h1>
+          <a href="https://les-freres-rotisseurs.vercel.app/" target="_blank" rel="noopener noreferrer" className="flex items-center">
+            <img
+              src={logo}
+              alt="Logo"
+              className="h-12 w-12 mr-3 rounded-full border-2 border-orange-500"
+            />
+            <h1 className="text-2xl font-bold text-gray-800 hidden sm:block">
+              Les Frères <span className="text-yellow-500">Rôtisseurs</span>
+            </h1>
+          </a>
         </div>
 
         {/* Right Section: Social Media Icons */}
