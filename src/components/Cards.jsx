@@ -2,7 +2,7 @@ import React from "react";
 import Card from "./Card";
 import img1 from "../assets/cards/gettyimages-1558684667-612x612.jpg";
 
-const CardsComponent: React.FC = () => {
+const CardsComponent = () => {
   const chickenDishes = [
     {
       title: "Fontaines d'Ouches",

@@ -1,16 +1,5 @@
 import React, { useState } from "react";
-
-interface CardProps {
-  id: string;
-  title: string;
-  subhead: string;
-  description: string;
-  imageUrl: string;
-  phoneNumber: string;
-  location: string;
-}
-
-const Card: React.FC<CardProps> = ({ id, title, subhead, description, imageUrl, phoneNumber, location }) => {
+const Card= ({ id, title, subhead, description, imageUrl, phoneNumber, location }) => {
   const [showPhone, setShowPhone] = useState(false);
 
   const handlePhoneClick = () => {
