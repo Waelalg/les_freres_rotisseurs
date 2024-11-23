@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-const Card= ({ id, title, subhead, description, imageUrl, phoneNumber, location }) => {
+
+const Card = ({ id, title, subhead, description, imageUrl, phoneNumber, location }) => {
   const [showPhone, setShowPhone] = useState(false);
 
   const handlePhoneClick = () => {
@@ -16,7 +17,10 @@ const Card= ({ id, title, subhead, description, imageUrl, phoneNumber, location 
   };
 
   return (
-    <div id={id} className="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
+    <div
+      id={id} // Ensure the ID is applied to the container div
+      className="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105"
+    >
       <img src={imageUrl} alt={title} className="w-full h-48 object-cover" />
       <div className="p-4">
         <h2 className="text-xl font-semibold text-gray-800 mb-1">{title}</h2>
@@ -42,4 +46,3 @@ const Card= ({ id, title, subhead, description, imageUrl, phoneNumber, location 
 };
 
 export default Card;
-

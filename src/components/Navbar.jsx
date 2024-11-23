@@ -20,34 +20,31 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [mobileView, setMobileView] = useState('main'); // 'main', 'planning', or 'menu'
   const dropdownRef = useRef(null);
   const navbarRef = useRef(null);
 
   const scrollToCard = (location) => {
-    const cardId = location.toLowerCase().replace(/[\s()]+/g, '-');
+    const cardId = location.toLowerCase().replace(/[\s()]+/g, "-");
     const element = document.getElementById(cardId);
+
     if (element) {
-      // Close all menus first
       setIsMenuOpen(false);
       setIsDropdownOpen(false);
+      setMobileView('main');
 
-      // Wait for menus to close and layout to stabilize
       setTimeout(() => {
-        const navbarHeight = navbarRef.current ? navbarRef.current.offsetHeight : 0;
-        const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-        const isMobile = window.innerWidth < 768; // Check if we're on mobile
-        
-        // Add extra offset for mobile to account for any floating elements
-        const mobileOffset = isMobile ? 20 : 0;
-        const offsetPosition = elementPosition - navbarHeight - 20 - mobileOffset;
+        const navbarHeight = navbarRef.current?.offsetHeight || 0;
+        const elementTop = element.getBoundingClientRect().top + window.scrollY;
+        const scrollPosition = elementTop - navbarHeight - 10;
 
         window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth"
+          top: scrollPosition,
+          behavior: "smooth",
         });
-      }, 300); // Increased timeout to ensure menus are fully closed
+      }, 200);
     } else {
-      console.error(`Card with id "${cardId}" not found`);
+      console.error(`Card with id "${cardId}" not found.`);
     }
   };
 
@@ -63,6 +60,13 @@ export default function Navbar() {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
+  const handleMobileMenuClick = (view) => {
+    setMobileView(view);
+    if (view === 'menu') {
+      setIsPopupOpen(true);
+    }
+  };
 
   return (
     <>
@@ -86,6 +90,7 @@ export default function Navbar() {
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center justify-center flex-grow">
               <div className="flex items-center space-x-6">
+                {/* Dropdown */}
                 <div className="relative" ref={dropdownRef}>
                   <button
                     className="text-gray-600 hover:text-gray-900 focus:outline-none flex items-center"
@@ -115,6 +120,8 @@ export default function Navbar() {
                     </div>
                   )}
                 </div>
+
+                {/* Menu Button */}
                 <button
                   className="text-gray-600 hover:text-gray-900 focus:outline-none flex items-center"
                   onClick={() => setIsPopupOpen(true)}
@@ -159,82 +166,73 @@ export default function Navbar() {
           {/* Mobile Menu */}
           {isMenuOpen && (
             <div className="md:hidden mt-4 pb-4 border-t border-gray-200">
-              <div className="pt-4 pb-2">
-                <button
-                  className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none"
-                  onClick={() => {
-                    setIsDropdownOpen(!isDropdownOpen);
-                    setIsMenuOpen(false);
-                  }}
-                >
-                  <FaMapMarkerAlt className="inline mr-2" />
-                  Planning
-                </button>
-                <button
-                  className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none"
-                  onClick={() => {
-                    setIsPopupOpen(true);
-                    setIsMenuOpen(false);
-                  }}
-                >
-                  <FaUtensils className="inline mr-2" />
-                  Menu
-                </button>
-              </div>
-              <div className="flex justify-center space-x-6 pt-2 border-t border-gray-200">
-                <a
-                  href="https://www.facebook.com"
-                  className="text-orange-500 hover:text-orange-600 transition-colors duration-200"
-                >
-                  <FaFacebook size={20} />
-                </a>
-                <a
-                  href="https://twitter.com"
-                  className="text-orange-500 hover:text-orange-600 transition-colors duration-200"
-                >
-                  <FaTwitter size={20} />
-                </a>
-                <a
-                  href="https://instagram.com"
-                  className="text-orange-500 hover:text-orange-600 transition-colors duration-200"
-                >
-                  <FaInstagram size={20} />
-                </a>
+              {mobileView === 'main' && (
+                <div className="pt-4 pb-2 flex flex-col space-y-2">
+                  <button
+                    className="text-gray-600 hover:text-gray-900 focus:outline-none flex items-center justify-center"
+                    onClick={() => handleMobileMenuClick('planning')}
+                  >
+                    <FaMapMarkerAlt className="mr-1" />
+                    Planning
+                  </button>
+                  <button
+                    className="text-gray-600 hover:text-gray-900 focus:outline-none flex items-center justify-center"
+                    onClick={() => handleMobileMenuClick('menu')}
+                  >
+                    <FaUtensils className="mr-1" />
+                    Menu
+                  </button>
+                </div>
+              )}
+              {mobileView === 'planning' && (
+                <div className="pt-4 pb-2">
+                  {Object.entries(dayLocations).map(([day, locations]) => (
+                    <div key={day} className="mb-2">
+                      <h3 className="text-md font-medium text-gray-700 px-4">{day}</h3>
+                      {locations.map((location) => (
+                        <button
+                          key={location}
+                          className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                          onClick={() => scrollToCard(location)}
+                        >
+                          {location}
+                        </button>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              )}
+              <div className="flex flex-col items-center space-y-4 pt-4 border-t border-gray-200">
+                <div className="flex space-x-6">
+                  <a
+                    href="https://www.facebook.com"
+                    className="text-orange-500 hover:text-orange-600 transition-colors duration-200"
+                  >
+                    <FaFacebook size={20} />
+                  </a>
+                  <a
+                    href="https://twitter.com"
+                    className="text-orange-500 hover:text-orange-600 transition-colors duration-200"
+                  >
+                    <FaTwitter size={20} />
+                  </a>
+                  <a
+                    href="https://instagram.com"
+                    className="text-orange-500 hover:text-orange-600 transition-colors duration-200"
+                  >
+                    <FaInstagram size={20} />
+                  </a>
+                </div>
               </div>
             </div>
           )}
         </div>
       </nav>
-      <MenuPopup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
-      {isDropdownOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden" onClick={() => setIsDropdownOpen(false)}>
-          <div className="bg-white w-64 h-full overflow-y-auto absolute right-0 top-0 pt-16">
-            <div className="p-4">
-              <button
-                onClick={() => setIsDropdownOpen(false)}
-                className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 focus:outline-none"
-              >
-                <FaTimes size={24} />
-              </button>
-              <h2 className="text-lg font-semibold mb-2">Planning</h2>
-              {Object.entries(dayLocations).map(([day, locations]) => (
-                <div key={day} className="mb-4">
-                  <h3 className="text-md font-medium mb-1">{day}</h3>
-                  {locations.map((location) => (
-                    <button
-                      key={location}
-                      className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                      onClick={() => scrollToCard(location)}
-                    >
-                      {location}
-                    </button>
-                  ))}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
+      <MenuPopup isOpen={isPopupOpen} onClose={() => {
+        setIsPopupOpen(false);
+        setMobileView('main');
+      }} />
     </>
   );
 }
+

@@ -96,7 +96,7 @@ const CardsComponent = () => {
           {chickenDishes.map((dish, index) => (
             <Card
               key={index}
-              id={dish.title.replace(/\s+/g, "-").toLowerCase()}
+              id={dish.title.replace(/[\s()]+/g, "-").toLowerCase()} // Convert title to ID-friendly format
               title={dish.title}
               subhead={dish.subhead}
               description={dish.description}
@@ -112,4 +112,3 @@ const CardsComponent = () => {
 };
 
 export default CardsComponent;
-
