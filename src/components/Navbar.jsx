@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
-import { FaFacebook, FaTwitter, FaInstagram, FaBars, FaTimes, FaMapMarkerAlt, FaUtensils } from "react-icons/fa";
-import logo from "../assets/log.jpg";
+import { FaFacebook, FaTwitter, FaInstagram, FaBars, FaTimes, FaMapMarkerAlt, FaUtensils, FaImages } from "react-icons/fa";
+import { useLocation } from 'react-router-dom';
 import MenuPopup from "./MenuPopup";
 
 const dayLocations = {
@@ -20,9 +20,12 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const [mobileView, setMobileView] = useState('main'); // 'main', 'planning', or 'menu'
+  const [mobileView, setMobileView] = useState('main');
   const dropdownRef = useRef(null);
   const navbarRef = useRef(null);
+  const location = useLocation();
+
+  const isGalerieRoute = location.pathname === '/galerie';
 
   const scrollToCard = (location) => {
     const cardId = location.toLowerCase().replace(/[\s()]+/g, "-");
@@ -77,7 +80,7 @@ export default function Navbar() {
             <div className="flex items-center">
               <a href="/" className="flex items-center">
                 <img
-                  src={logo}
+                  src="/log.jpg"
                   alt="Logo"
                   className="h-10 w-10 md:h-12 md:w-12 mr-2 md:mr-3 rounded-full border-2 border-orange-500"
                 />
@@ -88,47 +91,58 @@ export default function Navbar() {
             </div>
 
             {/* Desktop Menu */}
-            <div className="hidden md:flex items-center justify-center flex-grow">
-              <div className="flex items-center space-x-6">
+            <div className="hidden md:flex items-center justify-center flex-grow lg:justify-center">
+              <div className="flex items-center space-x-6 lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2">
                 {/* Dropdown */}
-                <div className="relative" ref={dropdownRef}>
-                  <button
-                    className="text-gray-600 hover:text-gray-900 focus:outline-none flex items-center"
-                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                  >
-                    <FaMapMarkerAlt className="mr-1" />
-                    Planning
-                  </button>
-                  {isDropdownOpen && (
-                    <div className="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
-                      <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-                        {Object.entries(dayLocations).map(([day, locations]) => (
-                          <div key={day} className="px-4 py-2">
-                            <p className="text-sm font-medium text-gray-900">{day}</p>
-                            {locations.map((location) => (
-                              <button
-                                key={location}
-                                className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                                onClick={() => scrollToCard(location)}
-                              >
-                                {location}
-                              </button>
-                            ))}
-                          </div>
-                        ))}
+                {!isGalerieRoute && (
+                  <div className="relative" ref={dropdownRef}>
+                    <button
+                      className="text-gray-600 hover:text-gray-900 focus:outline-none flex items-center"
+                      onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                      aria-haspopup="true"
+                      aria-expanded={isDropdownOpen}
+                    >
+                      <FaMapMarkerAlt className="mr-1" aria-hidden="true" />
+                      <span>Planning</span>
+                    </button>
+                    {isDropdownOpen && (
+                      <div className="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                        <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+                          {Object.entries(dayLocations).map(([day, locations]) => (
+                            <div key={day} className="px-4 py-2">
+                              <p className="text-sm font-medium text-gray-900">{day}</p>
+                              {locations.map((location) => (
+                                <button
+                                  key={location}
+                                  className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                                  onClick={() => scrollToCard(location)}
+                                  role="menuitem"
+                                >
+                                  {location}
+                                </button>
+                              ))}
+                            </div>
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                  )}
-                </div>
+                    )}
+                  </div>
+                )}
 
                 {/* Menu Button */}
                 <button
                   className="text-gray-600 hover:text-gray-900 focus:outline-none flex items-center"
                   onClick={() => setIsPopupOpen(true)}
                 >
-                  <FaUtensils className="mr-1" />
-                  Menu
+                  <FaUtensils className="mr-1" aria-hidden="true" />
+                  <span>Menu</span>
                 </button>
+
+                {/* Gallery Link */}
+                <a href="/galerie" className="text-gray-600 hover:text-gray-900 focus:outline-none flex items-center">
+                  <FaImages className="mr-1" aria-hidden="true" />
+                  <span>Galerie</span>
+                </a>
               </div>
             </div>
 
@@ -137,18 +151,21 @@ export default function Navbar() {
               <a
                 href="https://www.facebook.com"
                 className="text-orange-500 hover:text-orange-600 transition-colors duration-200"
+                aria-label="Facebook"
               >
                 <FaFacebook size={20} />
               </a>
               <a
                 href="https://twitter.com"
                 className="text-orange-500 hover:text-orange-600 transition-colors duration-200"
+                aria-label="Twitter"
               >
                 <FaTwitter size={20} />
               </a>
               <a
                 href="https://instagram.com"
                 className="text-orange-500 hover:text-orange-600 transition-colors duration-200"
+                aria-label="Instagram"
               >
                 <FaInstagram size={20} />
               </a>
@@ -158,6 +175,8 @@ export default function Navbar() {
             <button
               className="md:hidden text-gray-600 focus:outline-none"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-expanded={isMenuOpen}
+              aria-label="Toggle mobile menu"
             >
               {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
             </button>
@@ -168,23 +187,33 @@ export default function Navbar() {
             <div className="md:hidden mt-4 pb-4 border-t border-gray-200">
               {mobileView === 'main' && (
                 <div className="pt-4 pb-2 flex flex-col space-y-2">
-                  <button
-                    className="text-gray-600 hover:text-gray-900 focus:outline-none flex items-center justify-center"
-                    onClick={() => handleMobileMenuClick('planning')}
-                  >
-                    <FaMapMarkerAlt className="mr-1" />
-                    Planning
-                  </button>
+                  {!isGalerieRoute && (
+                    <button
+                      className="text-gray-600 hover:text-gray-900 focus:outline-none flex items-center justify-center"
+                      onClick={() => handleMobileMenuClick('planning')}
+                    >
+                      <FaMapMarkerAlt className="mr-1" aria-hidden="true" />
+                      <span>Planning</span>
+                    </button>
+                  )}
                   <button
                     className="text-gray-600 hover:text-gray-900 focus:outline-none flex items-center justify-center"
                     onClick={() => handleMobileMenuClick('menu')}
                   >
-                    <FaUtensils className="mr-1" />
-                    Menu
+                    <FaUtensils className="mr-1" aria-hidden="true" />
+                    <span>Menu</span>
                   </button>
+                  <a 
+                    href="/galerie" 
+                    className="text-gray-600 hover:text-gray-900 focus:outline-none flex items-center justify-center"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    <FaImages className="mr-1" aria-hidden="true" />
+                    <span>Galerie</span>
+                  </a>
                 </div>
               )}
-              {mobileView === 'planning' && (
+              {mobileView === 'planning' && !isGalerieRoute && (
                 <div className="pt-4 pb-2">
                   {Object.entries(dayLocations).map(([day, locations]) => (
                     <div key={day} className="mb-2">
@@ -207,18 +236,21 @@ export default function Navbar() {
                   <a
                     href="https://www.facebook.com"
                     className="text-orange-500 hover:text-orange-600 transition-colors duration-200"
+                    aria-label="Facebook"
                   >
                     <FaFacebook size={20} />
                   </a>
                   <a
                     href="https://twitter.com"
                     className="text-orange-500 hover:text-orange-600 transition-colors duration-200"
+                    aria-label="Twitter"
                   >
                     <FaTwitter size={20} />
                   </a>
                   <a
                     href="https://instagram.com"
                     className="text-orange-500 hover:text-orange-600 transition-colors duration-200"
+                    aria-label="Instagram"
                   >
                     <FaInstagram size={20} />
                   </a>
