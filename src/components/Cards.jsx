@@ -1,6 +1,11 @@
 import React from "react";
 import Card from "./Card";
-import img1 from "../assets/cards/gettyimages-1558684667-612x612.jpg";
+import img1 from "../assets/cards/fontaines_douche.jpg";
+import img2 from "../assets/cards/dole.jpg";
+import img3 from "../assets/cards/gresilles.jpeg";
+import img4 from "../assets/cards/gresillessamedi.jpg";
+import img5 from "../assets/cards/saint_apo.jpg"
+
 
 const CardsComponent = () => {
   const chickenDishes = [
@@ -16,7 +21,7 @@ const CardsComponent = () => {
       title: "Marché des Grésilles (Dijon)",
       subhead: "Jeudi",
       description: "Tender grilled chicken breast marinated in lemon and herbs. Served with a side of roasted vegetables.",
-      imageUrl: img1,
+      imageUrl: img3,
       phoneNumber: "+1 (234) 567-8901",
       location: "456 Oak Ave, Somewhere City, USA",
     },
@@ -32,7 +37,7 @@ const CardsComponent = () => {
       title: "Marché des Grésilles",
       subhead: "Samedi",
       description: "Breaded chicken breast topped with marinara sauce and melted mozzarella. Served with spaghetti.",
-      imageUrl: img1,
+      imageUrl: img4,
       phoneNumber: "+1 (456) 789-0123",
       location: "101 Pine Rd, Elsewhere, USA"
     },
@@ -40,7 +45,7 @@ const CardsComponent = () => {
       title: "Dole",
       subhead: "Samedi",
       description: "Our signature pizza crust topped with BBQ sauce, grilled chicken, red onions, and cilantro.",
-      imageUrl: img1,
+      imageUrl: img2,
       phoneNumber: "+1 (567) 890-1234",
       location: "202 Maple Ave, Nowheresville, USA"
     },
@@ -56,7 +61,7 @@ const CardsComponent = () => {
       title: "Saint Apollinaire",
       subhead: "Dimanche",
       description: "Our signature pizza crust topped with BBQ sauce, grilled chicken, red onions, and cilantro.",
-      imageUrl: img1,
+      imageUrl: img5,
       phoneNumber: "+1 (567) 890-1234",
       location: "202 Maple Ave, Nowheresville, USA"
     },

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
 import { RxDotFilled } from 'react-icons/rx';
-import img1 from "../assets/swiper/comment-faire-un-poulet-a-lamericaine-butterfly-chicken-.jpg";
-import img2 from "../assets/swiper/gettyimages-1127798962-612x612.jpg";
-import img3 from "../assets/swiper/istockphoto-1369184877-612x612.jpg";
-import img4 from "../assets/swiper/istockphoto-496588523-612x612.jpg";
+import img1 from "../assets/swiper/6d03387f-ef10-4217-be6a-ad37fba9f8e6.jpg";
+import img2 from "../assets/swiper/IMG_8633.jpeg";
+import img3 from "../assets/swiper/swiper.jpg";
+
 
 const Swiper = () => {
   const slides = [
@@ -23,11 +23,7 @@ const Swiper = () => {
       title: "Beautiful Landscape", 
       description: "A serene landscape showcasing nature's beauty." 
     },
-    { 
-      url: img4, 
-      title: "Amazing Architecture", 
-      description: "Innovative architectural design in urban spaces." 
-    },
+
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

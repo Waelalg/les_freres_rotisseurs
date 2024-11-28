@@ -1,5 +1,5 @@
 import React from 'react'
-import imgg from "../../assets/cards/gettyimages-1558684667-612x612.jpg"
+import imgg from "../../assets/cards/fontaines_douche.jpg"
 
 const Galerie = () => {
   // This is example data. Replace with your actual gallery images.
