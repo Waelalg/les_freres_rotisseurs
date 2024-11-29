@@ -4,11 +4,11 @@ import { useLocation } from 'react-router-dom';
 import MenuPopup from "./MenuPopup";
 
 const dayLocations = {
-  mercredi: ["Fontaines d'Ouches"],
-  jeudi: ["Marché des Grésilles (Dijon)"],
-  vendredi: ["Auxonne"],
-  samedi: ["Marché des Grésilles", "Dole", "Genlis"],
-  dimanche: [
+  Mercredi: ["Fontaines d'Ouches"],
+  Jeudi: ["Marché des Grésilles (Dijon)"],
+  Vendredi: ["Auxonne"],
+  Samedi: ["Marché des Grésilles (Dijon)", "Dole", "Genlis"],
+  Dimanche: [
     "Saint Apollinaire",
     "Chenove",
     "Gevrey-Chambertin",
@@ -149,7 +149,7 @@ export default function Navbar() {
             {/* Social Media Icons */}
             <div className="hidden md:flex items-center space-x-4">
               <a
-                href="https://www.facebook.com"
+                href="https://www.facebook.com/profile.php?id=100080283553333"
                 className="text-orange-500 hover:text-orange-600 transition-colors duration-200"
                 aria-label="Facebook"
               >
@@ -163,7 +163,7 @@ export default function Navbar() {
                 <FaTwitter size={20} />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/lesfreresrotisseurs/"
                 className="text-orange-500 hover:text-orange-600 transition-colors duration-200"
                 aria-label="Instagram"
               >
