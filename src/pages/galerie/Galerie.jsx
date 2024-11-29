@@ -1,22 +1,32 @@
 import React from 'react'
-import imgg from "../../assets/cards/fontaines_douche.jpg"
+import img1 from "../../assets/cards/fontaines_douche.jpg";
+import img2 from "../../assets/cards/dole.jpg"
+import img3 from "../../assets/cards/gresilles.jpeg"
+import img4 from "../../assets/cards/gresillessamedi.jpg"
+import img5 from "../../assets/cards/saint_apo.jpg"
+import img6 from "../../assets/swiper/6d03387f-ef10-4217-be6a-ad37fba9f8e6.jpg"
+import img7 from "../../assets/swiper/IMG_8633.jpeg"
+import img8 from "../../assets/swiper/swiper.jpg"
+import img9 from "../../assets/galeri/88f3f9e0-5a02-4c66-a4c7-7d1f752b5369.jpg"
+import img10 from "../../assets/galeri/IMG_8149.jpeg"
+import img11 from "../../assets/galeri/ebe50f15-3fce-4aae-a49f-afe21f41e1a6.jpg"
+
 
 const Galerie = () => {
   // This is example data. Replace with your actual gallery images.
   const images = [
-    { src: imgg, alt: 'Gallery Image 1' },
-    { src: imgg, alt: 'Gallery Image 2' },
-    { src: imgg, alt: 'Gallery Image 3' },
-    { src: imgg, alt: 'Gallery Image 4' },
-    { src: imgg, alt: 'Gallery Image 5' },
-    { src: imgg, alt: 'Gallery Image 6' },
-    { src: imgg, alt: 'Gallery Image 6' },
-    { src: imgg, alt: 'Gallery Image 6' },
-    { src: imgg, alt: 'Gallery Image 6' },
-    { src: imgg, alt: 'Gallery Image 6' },
-    { src: imgg, alt: 'Gallery Image 6' },
-    { src: imgg, alt: 'Gallery Image 6' },
-    { src: imgg, alt: 'Gallery Image 6' },
+    { src: img1, alt: 'Gallery Image 1' },
+    { src: img2, alt: 'Gallery Image 2' },
+    { src: img3, alt: 'Gallery Image 3' },
+    { src: img4, alt: 'Gallery Image 4' },
+    { src: img5, alt: 'Gallery Image 5' },
+    { src: img6, alt: 'Gallery Image 6' },
+    { src: img7, alt: 'Gallery Image 6' },
+    { src: img8, alt: 'Gallery Image 6' },
+    { src: img9, alt: 'Gallery Image 6' },
+    { src: img10, alt: 'Gallery Image 6' },
+    { src: img11, alt: 'Gallery Image 6' },
+
   ];
 
   return (
