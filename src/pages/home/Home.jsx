@@ -15,7 +15,7 @@ const Home = () => {
     Our <span className="text-yellow-500">Schedule</span>
   </h1>
   <p className="text-gray-600 text-base sm:text-lg text-center max-w-2xl">
-    Discover our daily menu and events tailored to satisfy your cravings!
+    Découvrez nos jours de travail !
   </p>
   <div className="w-24 h-1 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full"></div>
 </div>

@@ -16,7 +16,7 @@ const Footer = () => {
         {/* Middle Section: Social Media Links */}
         <div className="flex justify-center space-x-6 mb-4 sm:mb-0">
           <a
-            href="https://facebook.com"
+            href="https://www.facebook.com/profile.php?id=100080283553333"
             target="_blank"
             rel="noopener noreferrer"
             className="text-2xl text-orange-500 hover:text-yellow-400 transition-colors"
@@ -32,15 +32,7 @@ const Footer = () => {
             <FaTwitter />
           </a>
           <a
-            href="https://linkedin.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-2xl text-orange-500 hover:text-yellow-400 transition-colors"
-          >
-            <FaLinkedin />
-          </a>
-          <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/lesfreresrotisseurs/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-2xl text-orange-500 hover:text-yellow-400 transition-colors"

@@ -31,13 +31,13 @@ const Card = ({ id, title, subhead, description, imageUrl, phoneNumber, location
             onClick={handlePhoneClick}
             className="text-orange-500 font-bold hover:text-orange-600 transition-colors duration-300"
           >
-            {showPhone ? phoneNumber : "Show Phone"}
+            {showPhone ? phoneNumber : "Numéro de téléphone"}
           </button>
           <button
             onClick={handleLocationClick}
             className="bg-yellow-400 text-white px-4 py-2 rounded hover:bg-yellow-500 transition-colors duration-300"
           >
-            Location
+            Localisation
           </button>
         </div>
       </div>
