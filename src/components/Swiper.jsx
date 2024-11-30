@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
 import { RxDotFilled } from 'react-icons/rx';
-import img1 from "../assets/swiper/6d03387f-ef10-4217-be6a-ad37fba9f8e6.jpg";
-import img2 from "../assets/swiper/IMG_8633.jpeg";
-import img3 from "../assets/swiper/swiper.jpg";
+import img1 from "../assets/galeri/88f3f9e0-5a02-4c66-a4c7-7d1f752b5369.jpg";
+import img2 from "../assets/swiper/swiper.jpg";
+import img3 from "../assets/swiper/ebe50f15-3fce-4aae-a49f-afe21f41e1a6.jpg";
 
 
 const Swiper = () => {
