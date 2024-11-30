@@ -10,18 +10,18 @@ const Swiper = () => {
   const slides = [
     { 
       url: img1, 
-      title: "MagFlow - Project Overview", 
-      description: "An overview of the MagFlow project, designed to manage store operations." 
+      title: "Meilleur poulet rôti de Dijon et alentours!", 
+      description: "Venez gouter à notre délicieux poulet rôti sur nos différents marchés" 
     },
     { 
       url: img2, 
-      title: "Project Proposal Presentation", 
-      description: "A detailed proposal presentation for the project." 
+      title: "Goutez pas qu'à notre poulet rôti, mais à nos différentes autres options aussi", 
+      description: "Accompagnez le poulet par des pommes de terre grillées qui ont une saveur unique, et de la sauce préparée avec soin (tomates, poivrons, oignons, olives)" 
     },
     { 
       url: img3, 
-      title: "Beautiful Landscape", 
-      description: "A serene landscape showcasing nature's beauty." 
+      title: "Rajoutez au tout des accompagnements", 
+      description: "Des saucisses de volaille, cuisses de poulet qui vous feront revenir à chaque bouchée" 
     },
 
   ];
