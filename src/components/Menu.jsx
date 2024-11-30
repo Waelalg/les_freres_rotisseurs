@@ -7,72 +7,58 @@ const Menu = () => {
   const menuItems = [
     {
       id: 1,
-      name: "Mex Burger",
+      name: "Poulet rôti",
       image: img1,
-      price: 11.20,
+      price: 11.50,
       rating: 4.5
     },
     {
       id: 2,
-      name: "Classic Burger",
+      name: "Demi Poulet rôti",
       image: img2,
-      price: 10.99,
+      price: 6.00,
       rating: 4.0
     },
     {
       id: 3,
-      name: "Veggie Burger",
+      name: "Poulet fermier",
       image: img2,
-      price: 12.50,
+      price: 18.90,
       rating: 4.2
     },
     {
       id: 4,
-      name: "Chicken Burger",
+      name: "Demi Poulet fermier",
       image: img1,
-      price: 11.99,
+      price: 9.50,
       rating: 4.3
     },
     {
       id: 4,
-      name: "Chicken Burger",
+      name: "Cuisse de poulet",
       image: img1,
-      price: 11.99,
+      price: 3.50,
       rating: 4.3
     },
     {
       id: 4,
-      name: "Chicken Burger",
+      name: "Saucisse de volaille",
       image: img2,
-      price: 11.99,
+      price: 2.50,
       rating: 4.3
     },
     {
       id: 4,
-      name: "Chicken Burger",
+      name: "Pain oriental",
       image: img1,
-      price: 11.99,
+      price: 1.20,
       rating: 4.3
     },
     {
       id: 4,
-      name: "Chicken Burger",
+      name: "Pot de sauce",
       image: img2,
-      price: 11.99,
-      rating: 4.3
-    },
-    {
-      id: 4,
-      name: "Chicken Burger",
-      image: img1,
-      price: 11.99,
-      rating: 4.3
-    },
-    {
-      id: 4,
-      name: "Chicken Burger",
-      image: img2,
-      price: 11.99,
+      price: 1.50,
       rating: 4.3
     }
   ]
