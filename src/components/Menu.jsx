@@ -15,14 +15,14 @@ const Menu = () => {
     {
       id: 2,
       name: "Demi Poulet rôti",
-      image: img2,
+      image: img1,
       price: 6.00,
       rating: 4.0
     },
     {
       id: 3,
       name: "Poulet fermier",
-      image: img2,
+      image: img1,
       price: 18.90,
       rating: 4.2
     },
@@ -43,7 +43,7 @@ const Menu = () => {
     {
       id: 4,
       name: "Saucisse de volaille",
-      image: img2,
+      image: img1,
       price: 2.50,
       rating: 4.3
     },
@@ -57,7 +57,7 @@ const Menu = () => {
     {
       id: 4,
       name: "Pot de sauce",
-      image: img2,
+      image: img1,
       price: 1.50,
       rating: 4.3
     }
