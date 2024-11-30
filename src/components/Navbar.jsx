@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { FaFacebook, FaTwitter, FaInstagram, FaBars, FaTimes, FaMapMarkerAlt, FaUtensils, FaImages } from "react-icons/fa";
 import { useLocation } from 'react-router-dom';
 import MenuPopup from "./MenuPopup";
+import logo from "../assets/log.png"
 
 const dayLocations = {
   Mercredi: ["Fontaines d'Ouches"],
@@ -80,7 +81,7 @@ export default function Navbar() {
             <div className="flex items-center">
               <a href="/" className="flex items-center">
                 <img
-                  src="/log.jpg"
+                  src={logo}
                   alt="Logo"
                   className="h-10 w-10 md:h-12 md:w-12 mr-2 md:mr-3 rounded-full border-2 border-orange-500"
                 />
