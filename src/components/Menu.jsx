@@ -15,7 +15,7 @@ const Menu = () => {
   ];
 
   return (
-    <div className="grid grid-cols-4 gap-6">
+    <div className="grid grid-cols-4 gap-6 justify-center items-center">
       {menuItems.map((item, index) => (
         <React.Fragment key={item.id}>
           {/* Carte du menu */}
