@@ -12,7 +12,7 @@ const CardsComponent = () => {
     {
       title: "Fontaines d'Ouches",
       subhead: "Mercredi",
-      description: "Crispy on the outside, juicy on the inside. Our secret blend of spices makes this a fan favorite.",
+      description: "Retrouvez nous au marché de Fontaines d'Ouches à coté de Action, Intermarché et Basic-Fit",
       imageUrl: img1,
       phoneNumber: "+1 (123) 456-7890",
       location: "123 Main St, Anytown, USA",
@@ -20,7 +20,7 @@ const CardsComponent = () => {
     {
       title: "Marché des Grésilles (Dijon)",
       subhead: "Jeudi",
-      description: "Tender grilled chicken breast marinated in lemon and herbs. Served with a side of roasted vegetables.",
+      description: "Nous sommes au marché de gresilles sur Dijon à l'entrée juste en face de La Poste",
       imageUrl: img3,
       phoneNumber: "+1 (234) 567-8901",
       location: "456 Oak Ave, Somewhere City, USA",
@@ -28,7 +28,7 @@ const CardsComponent = () => {
     {
       title: "Auxonne",
       subhead: "Vendredi",
-      description: "Crispy chicken wings tossed in our homemade buffalo sauce. Served with celery sticks and blue cheese dip.",
+      description: "Les vendredis à Auxonne en face de l'église",
       imageUrl: img1,
       phoneNumber: "+1 (345) 678-9012",
       location: "789 Elm St, Another Town, USA"
@@ -36,7 +36,7 @@ const CardsComponent = () => {
     {
       title: "Marché des Grésilles",
       subhead: "Samedi",
-      description: "Breaded chicken breast topped with marinara sauce and melted mozzarella. Served with spaghetti.",
+      description: "Au marché de gresillés tout comme les jeudis",
       imageUrl: img4,
       phoneNumber: "+1 (456) 789-0123",
       location: "101 Pine Rd, Elsewhere, USA"
@@ -44,7 +44,7 @@ const CardsComponent = () => {
     {
       title: "Dole",
       subhead: "Samedi",
-      description: "Our signature pizza crust topped with BBQ sauce, grilled chicken, red onions, and cilantro.",
+      description: "Venez nous voir sur Dole aussi au marché!",
       imageUrl: img2,
       phoneNumber: "+1 (567) 890-1234",
       location: "202 Maple Ave, Nowheresville, USA"
@@ -52,7 +52,7 @@ const CardsComponent = () => {
     {
       title: "Genlis",
       subhead: "Samedi",
-      description: "Fresh romaine lettuce, grilled chicken, croutons, and parmesan cheese tossed in Caesar dressing.",
+      description: "Nous sommes sur Genlis au marché en face de la Poste",
       imageUrl: img1,
       phoneNumber: "+1 (678) 901-2345",
       location: "303 Cedar Blvd, Anyplace, USA"
@@ -60,15 +60,15 @@ const CardsComponent = () => {
     {
       title: "Saint Apollinaire",
       subhead: "Dimanche",
-      description: "Our signature pizza crust topped with BBQ sauce, grilled chicken, red onions, and cilantro.",
+      description: "A Saint Apollinaire juste après le Lidl, en face du bureau tabac et boulangerie Maison Oudot",
       imageUrl: img5,
       phoneNumber: "+1 (567) 890-1234",
       location: "202 Maple Ave, Nowheresville, USA"
     },
     {
-      title: "Chenove",
+      title: "Chenôve",
       subhead: "Dimanche",
-      description: "Our signature pizza crust topped with BBQ sauce, grilled chicken, red onions, and cilantro.",
+      description: "Rejoignez-nous au marché de Chenôve",
       imageUrl: img1,
       phoneNumber: "+1 (567) 890-1234",
       location: "202 Maple Ave, Nowheresville, USA"
@@ -76,7 +76,7 @@ const CardsComponent = () => {
     {
       title: "Gevrey-Chambertin",
       subhead: "Dimanche",
-      description: "Our signature pizza crust topped with BBQ sauce, grilled chicken, red onions, and cilantro.",
+      description: "",
       imageUrl: img1,
       phoneNumber: "+1 (567) 890-1234",
       location: "202 Maple Ave, Nowheresville, USA"
@@ -84,7 +84,7 @@ const CardsComponent = () => {
     {
       title: "Chevigny-Saint-Saveur",
       subhead: "Dimanche",
-      description: "Our signature pizza crust topped with BBQ sauce, grilled chicken, red onions, and cilantro.",
+      description: "",
       imageUrl: img1,
       phoneNumber: "+1 (567) 890-1234",
       location: "202 Maple Ave, Nowheresville, USA"
