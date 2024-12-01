@@ -19,7 +19,7 @@ const MenuItemCard = ({ item }) => {
 
         {/* Price */}
         <div className="text-center text-xl font-bold mb-4 text-orange-600">
-          ${item.price.toFixed(2)}
+          €{item.price.toFixed(2)}
         </div>
       </div>
     </div>
