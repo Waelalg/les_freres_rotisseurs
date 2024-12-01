@@ -94,9 +94,7 @@ const CardsComponent = () => {
   return (
     <div className="bg-amber-50 min-h-screen py-12 pt-24">
       <div className="container mx-auto px-4 rounded-sm">
-        <h1 className="text-3xl font-bold text-center mb-8 text-orange-600">
-          Our Chicken Specialties
-        </h1>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {chickenDishes.map((dish, index) => (
             <Card
