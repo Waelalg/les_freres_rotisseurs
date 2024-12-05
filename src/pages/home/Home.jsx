@@ -33,7 +33,7 @@ const Home = () => {
       {/* Schedule Section */}
       <div className="my-10 flex flex-col items-center space-y-4">
         <h1 className="text-center text-3xl sm:text-4xl font-bold text-black">
-          Our <span className="text-yellow-500">Schedule</span>
+          Notre <span className="text-yellow-500">Planning</span>
         </h1>
         <p className="text-gray-600 text-base sm:text-lg text-center max-w-2xl">
           Découvrez nos jours de travail !
