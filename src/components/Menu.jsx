@@ -15,16 +15,14 @@ const Menu = () => {
   ];
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 justify-center items-center">
-      {menuItems.map((item, index) => (
-        <React.Fragment key={item.id}>
-          {/* Carte du menu */}
-          <MenuItemCard item={item} />
-
-          {/* Forcer un retour à la ligne après les items 2, 4, 6, 7, et 8 */}
-          {[1, 3, 5, 6, 7].includes(index) && <div className="col-span-full"></div>}
-        </React.Fragment>
-      ))}
+    <div className="container mx-auto p-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {menuItems.map((item) => (
+          <div key={item.id} className="flex justify-center">
+            <MenuItemCard item={item} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
